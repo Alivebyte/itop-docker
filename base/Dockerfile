@@ -1,5 +1,5 @@
 FROM phusion/baseimage:focal-1.1.0
-MAINTAINER Vladimir Kunin <we@knowitop.ru>
+MAINTAINER Vladislav Vilkov <alivebyte.yt@gmail.com>
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG ITOP_VERSION=3.0.0

@@ -1,5 +1,5 @@
 FROM alivebyte/itop:3.0.0-base
-MAINTAINER Vladimir Kunin <we@knowitop.ru>
+MAINTAINER Vladislav Vilkov <alivebyte.yt@gmail.com>
 
 #RUN apt-get update && apt-get install -y software-properties-common \
 #    && apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc' \
