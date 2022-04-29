@@ -9,7 +9,7 @@ The image is based on [vkbunin/itop](https://hub.docker.com/r/vbkunin/itop) and 
 
 Run new iTop 3.0.0 (see tags for other iTop versions) container named *my-itop*:
 ```
-sudo docker run -d -p 8000:80 --name=my-itop vbkunin/itop:3.0.0
+sudo docker run -d -p 8000:80 --name=my-itop alivebyte/itop:3.0.0
 ```
 Then go to [http://localhost:8000/](http://localhost:8000/) to continue the installation.
 
