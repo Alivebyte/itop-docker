@@ -21,15 +21,18 @@ or use username *root* with blank password.
 
 Expose iTop extensions folder if you need it:
 ```
-sudo docker run -d -p 8000:80 --name=my-itop -v /home/user/itop-extensions:/var/www/html/extensions vbkunin/itop:3.0.0
+sudo docker run -d -p 8000:80 --name=my-itop -v /home/user/itop-extensions:/var/www/html/extensions alivebyte/itop:3.0.0
 ```
-
+Expose iTop folder if you need it (this is a fork feature):
+```
+sudo docker run -d -p 8000:80 --name=my-itop -v /home/user/itop-extensions:/var/www/html/ alivebyte/itop:3.0.0
+```
 ### Image without MySQL
 
 Уou can get `base` image without MySQL database server (only Apache and PHP) to use with your own one:
 
 ```
-sudo docker run -d -p 8000:80 --name=my-itop vbkunin/itop:3.0.0-base
+sudo docker run -d -p 8000:80 --name=my-itop alivebyte/itop:3.0.0-base
 ```
 
 ### Useful scripts and helpers
