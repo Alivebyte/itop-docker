@@ -25,9 +25,10 @@ RUN apt-get install -y software-properties-common ca-certificates \
 RUN rm -rf /var/www/html/* \
     && mkdir -p /tmp/itop \
     && curl -SL -o /tmp/itop/itop.zip https://sourceforge.net/projects/itop/files/itop/$ITOP_VERSION/$ITOP_FILENAME/download \
-    && unzip /tmp/itop/itop.zip -d /tmp/itop/ \
-    && mv /tmp/itop/web/* /var/www/html \
-    && rm -rf /tmp/itop
+    && unzip /tmp/itop/itop.zip -d /tmp/itop/;
+    #&& mv /tmp/itop/web/* /var/www/html;
+
+VOLUME /var/www/html
 
 # Copy services, configs and scripts
 COPY service /etc/service/
@@ -41,13 +42,10 @@ RUN chmod +x -R /etc/service \
 
 # Create shortcuts for the right management scripts and fix rights
 RUN ln -s /make-itop-config-writable.sh /usr/local/bin/conf-w \
-    && ln -s /make-itop-config-read-only.sh /usr/local/bin/conf-ro \
-    && chown -R www-data:www-data /var/www/html
-
-VOLUME /var/www/html
-
-EXPOSE 80
+    && ln -s /make-itop-config-read-only.sh /usr/local/bin/conf-ro
 
 HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost/ || exit 1
 
 ENTRYPOINT ["/run.sh"]
+
+EXPOSE 80
