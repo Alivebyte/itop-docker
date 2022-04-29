@@ -25,7 +25,7 @@ sudo docker run -d -p 8000:80 --name=my-itop -v /home/user/itop-extensions:/var/
 ```
 Expose iTop folder if you need it (this is a fork feature):
 ```
-sudo docker run -d -p 8000:80 --name=my-itop -v /home/user/itop-extensions:/var/www/html/ alivebyte/itop:3.0.0
+sudo docker run -d -p 8000:80 --name=my-itop -v /home/user/itop:/var/www/html/ alivebyte/itop:3.0.0
 ```
 ### Image without MySQL
 
