@@ -19,7 +19,7 @@ RUN apt-get install -y software-properties-common ca-certificates \
     && rm -rf /var/lib/apt/lists/* \
     && update-alternatives --set php /usr/bin/php7.4
 
-VOLUME /var/www/html
+
 
 # Get iTop
 RUN rm -rf /var/www/html/* \
@@ -44,7 +44,7 @@ RUN ln -s /make-itop-config-writable.sh /usr/local/bin/conf-w \
     && ln -s /make-itop-config-read-only.sh /usr/local/bin/conf-ro \
     && chown -R www-data:www-data /var/www/html
 
-
+VOLUME /var/www/html
 
 EXPOSE 80
 
